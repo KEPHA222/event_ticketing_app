@@ -5,6 +5,7 @@
         <v-toolbar
           flat
         >
+        <v-toolbar-title class="mr-8" >EVENT TICKETING APP</v-toolbar-title>
         <v-btn
             class="mr-4"
             color="primary"
@@ -416,9 +417,9 @@ export default {
         },
         saveDataToFireStore(stripeObject) {
             // const db = firebase.firestore()
-            const chargesRef = db.collection("charges")
+            const chargesRef = db.collection("calEvent")
             const pushId = chargesRef.doc().id
-            db.collection("charges").doc(pushId).set(stripeObject)
+            db.collection("calEvent").doc(pushId).set(stripeObject)
             chargesRef.doc(pushId).onSnapshot(snapShot => {
                  const charge = snapShot.data();
                         if (charge.error) {
